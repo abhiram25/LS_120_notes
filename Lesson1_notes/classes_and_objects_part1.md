@@ -255,3 +255,39 @@ kevin_durant.team = "Golden State Warriors"
 
 puts kevin_durant.team
 ```
+Look how much cleaner our code is above.
+
+Instead of creating separate setter and getters for `:name` and `:team`, we simply used the `attr_accessor` methods to create these setters and getters for us.
+
+The `attr_accessor` method takes a symbol as an argument, which it uses to create the setter and getter methods.  Those two lines replaced 4 method definitions.
+
+What if we only wanted a getter method or a setter method?
+
+We can use `attr_reader` method for the getter method or `attr_writer` method for the setter.
+
+**NOTE**: All of the `attr_*` methods take a symbol as an argument
+
+In the code above, since we are using more than one symbol to create multiple setter and getter methods, we can put it on one line like this
+
+```Ruby
+class BballPlayer
+	attr_accessor :name, :team
+
+	def initialize(name, team)
+		@name = name
+		@team = team
+	end
+end
+
+kevin_durant = BballPlayer.new("Kevin Durant", "OKC Thunder")
+
+puts kevin_durant.team
+# => "Miami Heat"
+
+kevin_durant.team = "Golden State Warriors"
+
+puts kevin_durant.team
+# => "OKC Thunder"
+```
+
+In the example above we are tracking more than one state, so we use that syntax above for `attr_accessor`
