@@ -122,4 +122,80 @@ puts lebron_james.train
 ```
 In the above example for the instance method play, we are able to access the instance variable sport within the instance method `play` and we are also able to access the instance variable name in the instance method `train`.
 
+If I wanted to print Roger Federer's name 
+
+We could try this
+puts `roger_federer.name`
+
+I would get something like this `undefined method `name' for #<Athlete:0x007f82fb092d08> (NoMethodError)`
+
+name is not an instance method, which is why we can't get the name
+
+If we want to retrieve the name, we create a method that will return the name.  We can call it get_name and all it will do is return
+the name in the `@name` instance variable
+
+```Ruby
+class Athlete
+	def initialize(name, sport)
+		@name = name
+		@sport = sport
+	end
+
+	def play
+		"Playing #{@sport}"
+	end
+
+	def get_name
+		@name
+	end
+
+	def train
+		"#{@name} is training"
+	end
+end
+
+puts lebron_james.get_name
+#=> "LeBron James
+```
+
+This is what we call our getter methods, now what if we wanted to change the name, we'd have to create a setter method
+
+Let's say I want to change the name from LeBron James to Tim Duncan
+
+```Ruby
+class Athlete
+	def initialize(name, sport)
+		@name = name
+		@sport = sport
+	end
+
+	def play
+		"Playing #{@sport}"
+	end
+
+	def get_name
+		@name
+	end
+
+	def set_name=(name)
+		@name = name
+	end
+
+	def train
+		"#{@name} is training"
+	end
+end
+
+lebron_james.set_name("Tim Duncan")
+puts lebron_james.get_name
+# => Tim Duncan
+```
+
+To use the `set_name=` normally, it is the same as `lebron_james.set_name=("Tim Duncan")`
+
+Rubyists use the same name as the instance variable for the setter and getter methods.
+
+
+
+
 
