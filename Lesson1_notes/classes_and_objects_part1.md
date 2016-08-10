@@ -68,3 +68,42 @@ roger_federer = Athlete.new("Roger Federer", "tennis")
 
 lebron_james = Athlete.new("Lebron James", "basketball")
 ```
+
+<h1>Instance Methods</h1>
+
+```Ruby
+class Athlete
+  def initialize(name, sport)
+		@name = name
+		@sport = sport
+	end
+
+	def play
+	  "Playing #{@sport}"
+	end
+
+	def train
+	  "#{@name} is training"
+	end
+end
+
+roger_federer = Athlete.new("Roger Federer", "tennis")
+
+lebron_james = Athlete.new("Lebron James", "basketball")
+
+puts roger_federer.play
+# => "Playing tennis"
+
+puts lebron_james.play
+# => "Playing basketball"
+
+puts roger_federer.train
+# => "Roger Federer is training"
+
+puts lebron_james.train
+# => "Lebron James is training"
+```
+In the above example for the instance method play, we are able to access the instance variable sport within the instance method play and 
+we are also able to access the instance variable name in the instance method train.
+
+
