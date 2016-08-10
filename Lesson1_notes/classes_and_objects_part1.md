@@ -21,7 +21,8 @@ class Athlete
 		@name = name
 		@sport = sport
 	end
-
+```
+```Ruby
 	def play
 		"Playing #{@sport}"
 	end
@@ -31,6 +32,41 @@ class Athlete
 	end
 end
 ```
+
+Because of our `attr_accessor` method, we don't have to reference the `@sport` or `@name` instance variables directly and just use sport and name calling upon the the instance method rather than instance variable.
+
+```Ruby
+	def play
+		"Playing #{sport}"
+	end
+
+	def train
+		"#{name} is training"
+	end
+end
+```
+
+<h1>Why not just use the @instance variable?</h1>
+
+Suppose we have an instance variable for Social security number, we only want to show the last 4 numbers
+
+```Ruby
+class Customer
+	def initialize(ssn)
+		@ssn = ssn
+	end
+
+	def ssn
+		"xxx-xx-" + @ssn.split("-").last
+	end
+end
+
+Jack = Customer.new("411-37-9456")
+
+puts Jack.ssn
+```
+
+It's much easier to reference this string in one place in the code rather than sprinkle it anywhere else for debugging.
 
 ```Ruby
 class GoodDog
@@ -291,3 +327,8 @@ puts kevin_durant.team
 ```
 
 In the example above we are tracking more than one state, so we use that syntax above for `attr_accessor`
+
+```Ruby
+	def dribble
+		"#{@name} dribbles"
+	end
