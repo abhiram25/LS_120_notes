@@ -285,7 +285,7 @@ end
 kevin_durant = BballPlayer.new("Kevin Durant", "OKC Thunder")
 
 puts kevin_durant.team
-# => "Miami Heat"
+# => "OKC Thunder"
 
 kevin_durant.team = "Golden State Warriors"
 
@@ -318,12 +318,12 @@ end
 kevin_durant = BballPlayer.new("Kevin Durant", "OKC Thunder")
 
 puts kevin_durant.team
-# => "Miami Heat"
+# => "OKC Thunder"
 
 kevin_durant.team = "Golden State Warriors"
 
 puts kevin_durant.team
-# => "OKC Thunder"
+# => "Golden State Warriors"
 ```
 
 In the example above we are tracking more than one state, so we use that syntax above for `attr_accessor`
