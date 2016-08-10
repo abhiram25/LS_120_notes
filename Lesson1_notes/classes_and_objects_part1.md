@@ -233,4 +233,25 @@ puts kevin_durant.team
 If you're a sports fan, you'd realize that Kevin Durant left OKC for Golden State.  So What we did here is have a setter
 in place `team=(team)` and we set the new value "Golden State Warriors" to the instance variable `@team`
 
+As you can see above, creating those setter and getter methods took up a lot of room for just the simple features of getting and setting values.  What If I wanted to add salaries and also what college they played for?  It would take up too much space so fortunately for us, Ruby has a buil-in way to automatically create these setter and getter methods for us, Enter **attr_accessor** method.
 
+```Ruby
+class BballPlayer
+	attr_accessor :name
+	attr_accessor :team
+
+	def initialize(name, team)
+		@name = name
+		@team = team
+	end
+end
+
+kevin_durant = BballPlayer.new("Kevin Durant", "OKC Thunder")
+
+puts kevin_durant.team
+# => "Miami Heat"
+
+kevin_durant.team = "Golden State Warriors"
+
+puts kevin_durant.team
+```
