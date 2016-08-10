@@ -195,7 +195,39 @@ To use the `set_name=` normally, it is the same as `lebron_james.set_name=("Tim 
 
 Rubyists use the same name as the instance variable for the setter and getter methods.
 
+```Ruby
+class BballPlayer
+	def initialize(name, team)
+		@name = name
+		@team = team
+	end
 
+	def name
+		@name
+	end
+
+	def team
+		@team
+	end
+
+	def name=(name)
+	end
+
+	def team=(team)
+		@team = team
+	end
+end
+
+kevin_durant = BballPlayer.new("Kevin Durant", "OKC Thunder")
+
+puts kevin_durant.team
+# => "Miami Heat"
+
+kevin_durant.team = "Golden State Warriors"
+
+puts kevin_durant.team
+# => Golden State Warriors
+```
 
 
 
