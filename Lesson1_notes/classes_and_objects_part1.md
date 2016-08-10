@@ -332,4 +332,23 @@ In the example above we are tracking more than one state, so we use that syntax 
 	def dribble
 		"#{@name} dribbles"
 	end
-	```
+```
+
+```Ruby
+class Customer
+	def initialize(ssn)
+		@ssn = ssn
+	end
+
+	def ssn
+		"xxx-xx-" + @ssn.split("-").last
+	end
+end
+
+Jack = Customer.new("411-37-9456")
+
+puts Jack.ssn # => "xxx-xx-9456"
+```
+
+In the above example, it's much easier to reference to one area in this case, because when we have to debug, it's a lot easier.
+
