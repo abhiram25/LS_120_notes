@@ -13,7 +13,24 @@ We would use **instance variables** to track this information
 **Instance Variables** are scoped at the object level
 
 Even though Roger Federer and Lebron James are two different Athletes, they have
-common behavior such as they can both run and strength train.
+common behavior such as play and train
+
+```Ruby 
+class Athlete
+	def initialize(name, sport)
+		@name = name
+		@sport = sport
+	end
+
+	def play
+		"Playing #{@sport}"
+	end
+
+	def train
+		"#{@name} is training"
+	end
+end
+```
 
 ```Ruby
 class GoodDog
@@ -103,7 +120,6 @@ puts roger_federer.train
 puts lebron_james.train
 # => "Lebron James is training"
 ```
-In the above example for the instance method play, we are able to access the instance variable sport within the instance method play and 
-we are also able to access the instance variable name in the instance method train.
+In the above example for the instance method play, we are able to access the instance variable sport within the instance method `play` and we are also able to access the instance variable name in the instance method `train`.
 
 
