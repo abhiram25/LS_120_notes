@@ -352,3 +352,75 @@ puts Jack.ssn # => "xxx-xx-9456"
 
 In the above example, it's much easier to reference to one area in this case, because when we have to debug, it's a lot easier.
 
+```Ruby
+class GoodDog
+  attr_accessor :name, :height, :weight
+
+  def initialize(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
+  end
+
+  def speak
+    "#{name} says arf!"
+  end
+
+  def change_info(n, h, w)
+    @name = n
+    @height = h
+    @weight = w
+  end
+
+  def info
+    "#{name} weighs #{weight} and is #{height} tall."
+  end
+end
+```
+
+We could use the `change_info` method like this
+
+```Ruby
+sparky = GoodDog.new('Sparky', '12 inches', '10 lbs')
+puts sparky.info      # => Sparky weighs 10 lbs and is 12 inches tall.
+
+sparky.change_info('Spartacus', '24 inches', '45 lbs')
+puts sparky.info      # => Spartacus weighs 45 lbs and is 24 inches tall.
+```
+
+Let's change the implementation of our method
+```Ruby
+def change_info(n, h, w)
+  name = n
+  height = h
+  weight = w
+end
+```
+
+```Ruby
+sparky.change_info('Spartacus', '24 inches', '45 lbs')
+puts sparky.info # => Sparky weighs 10 lbs and is 12 inches tall.
+```
+What happened? The method didn't change `sparky`'s information.
+
+The reason why our setter methods didn't work is because Ruby thought we were instantiating local variables
+
+To disambiguate from creating a local variable, we need to use the `self.name=` to let Ruby know that we're calling a method.
+So our change.info method should be updated to this.
+
+```Ruby
+def change_info(n, h, w)
+  self.name = n
+  self.height = h
+  self.weight = w
+end
+```
+
+When we run te code, our output is:
+
+```Ruby
+sparky.change_info('Spartacus', '24 inches', '45 lbs')
+puts sparky.info      # => Spartacus weighs 45 lbs and is 24 inches tall.
+```
+
+
