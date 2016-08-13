@@ -534,3 +534,4 @@ fido.a_protected_method
     #<Animal:0x007fb174157110>
 ```
 
+
