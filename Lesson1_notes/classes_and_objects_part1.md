@@ -33,8 +33,6 @@ class Athlete
 end
 ```
 
-Because of our `attr_accessor` method, we don't have to reference the `@sport` or `@name` instance variables directly and just use sport and name calling upon the the instance method rather than instance variable.
-
 ```Ruby
 	def play
 		"Playing #{sport}"
@@ -163,7 +161,7 @@ If I wanted to print Roger Federer's name
 We could try this
 puts `roger_federer.name`
 
-I would get something like this `undefined method `name' for #<Athlete:0x007f82fb092d08> (NoMethodError)`
+I would get something like this undefined method `name` for `#<Athlete:0x007f82fb092d08> (NoMethodError)`
 
 name is not an instance method, which is why we can't get the name
 
@@ -351,6 +349,8 @@ puts Jack.ssn # => "xxx-xx-9456"
 ```
 
 In the above example, it's much easier to reference to one area in this case, because when we have to debug, it's a lot easier.
+
+Because of our `attr_accessor` method, we don't have to reference the `@sport` or `@name` instance variables directly and just use sport and name calling upon the the instance method rather than instance variable.
 
 ```Ruby
 class GoodDog
