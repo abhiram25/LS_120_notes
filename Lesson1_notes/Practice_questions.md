@@ -103,3 +103,10 @@
   ```
 
   **Solution**
+  
+   The `initialize` method gets called everytime you call a new object.  Instatiation of the `GoodDog` object has triggered the 
+   initialize method and we passed an argument to the initialize method through the `new` method.
+   
+   The string `Spot` is being passed from the `new` method and is assigned to the param local variable `name`.  Afterwards we set the instance variable `@name` to `name`, which results in assigning the string `"Sparky"` to the `@name` instance variable.
+   
+   
