@@ -12,6 +12,19 @@ Another way to apply a polymorphic structure is to use a `module`.
 
 A `module` is a set of behaviors that multiple classes can use in a program using a `mixin`
 
+**class** - Basic outline of what a class should be made of and what it should do.
+
+```Ruby
+class GoodDog
+end
+
+sparky = GoodDog.new
+```
+
+In the above example, `sparky` is an object or instance of class `GoodDog`.  The entire workflow of creating a new object or instance of a class is called **instantiation**.  
+
+The important fact here is that an object was returned by calling the class method `new`.
+
 Example provided below
 
 ```Ruby
