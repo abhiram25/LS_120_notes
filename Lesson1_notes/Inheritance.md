@@ -557,6 +557,6 @@ ArgumentError: wrong number of arguments (1 for 0)
 from (pry):12:in `send'
 ```
 
-
+Overall it's very important to familiarize yourself with common object methods, so that you don't make any deadly mistakes in your code.
 
 
