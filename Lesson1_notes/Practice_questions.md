@@ -109,4 +109,4 @@
    
    The string `Spot` is being passed from the `new` method and is assigned to the param local variable `name`.  Afterwards we set the instance variable `@name` to `name`, which results in assigning the string `"Sparky"` to the `@name` instance variable.
    
-   
+ 12. 
