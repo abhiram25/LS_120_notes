@@ -1,105 +1,105 @@
 1. What is **Encapsulation**?
 
-**Solution** 
+  **Solution** 
 
-Hiding pieces of functionality and making it unavailable for the rest of the code base.
+  Hiding pieces of functionality and making it unavailable for the rest of the code base.
 
 2. What is **Polymorphism**?
 
-**Solution** 
+  **Solution** 
 
-Ability for data to be represented as different types.
+  Ability for data to be represented as different types.
 
 3. What are **states**?
 
-**Solution** 
+  **Solution** 
 
-specific attributes for individual objects
+  specific attributes for individual objects
 
 4. What is a **Module**?
 
-**Solution** 
+  **Solution** 
 
-Collection of behaviors that is available for a class via mixins using the include key word.
+  Collection of behaviors that is available for a class via mixins using the include key word.
 
 5. What is a class?
 
-**Solution**
+  **Solution**
 
-Basic outline of what an object should be made of and what it should do.
+  Basic outline of what an object should be made of and what it should do.
 
 6. What is going on here? Be precise.
 
-```Ruby
-class GoodDog
-end
+  ```Ruby
+  class GoodDog
+  end
 
-sparky = GoodDog.newTerm
-```
+  sparky = GoodDog.newTerm
+  ```
 
-**Solution**
+  **Solution**
 
-We created the class GoodDog, then we have instantiated an object called sparky, 
-which is an instance of the class GoodDog.  
+  We created the class GoodDog, then we have instantiated an object called sparky, 
+  which is an instance of the class GoodDog.  
 
 7.  What is going on in the code below.  Be precise
 
-```Ruby
-module Speak
-  def speak(sound)
-    puts "#{sound}"
+  ```Ruby
+  module Speak
+    def speak(sound)
+      puts "#{sound}"
+    end
   end
-end
 
-class GoodDog
-  include Speak
-end
+  class GoodDog
+    include Speak
+  end
 
-class HumanBeing
-  include Speak
-end
+  class HumanBeing
+    include Speak
+  end
 
-sparky = GoodDog.new
-sparky.speak("Arf!") # => Arf!
-bob = HumanBeing.new
-bob.speak("Hello!") # => Hello!
-```
-**Solution**
+  sparky = GoodDog.new
+  sparky.speak("Arf!") # => Arf!
+  bob = HumanBeing.new
+  bob.speak("Hello!") # => Hello!
+  ```
+  **Solution**
 
-We created a module called speak and we included the module in the classes GoodDog and HumanBeing. 
-We included the methods in the classes via mixin and as a result the behaviors in the Speak module 
-are shared by the classes and it's objects.
+  We created a module called speak and we included the module in the classes GoodDog and HumanBeing. 
+  We included the methods in the classes via mixin and as a result the behaviors in the Speak module 
+  are shared by the classes and it's objects.
 
 8. What are **states**?
 
-**Solution**
+  **Solution**
 
-Specific attributes for individual objects.
+  Specific attributes for individual objects.
 
 9. What is an **instance variable**?
 
-**Solution**
+  **Solution**
 
-Track information about state of an object.
+  Track information about state of an object.
 
-Scoped at the object level
+  Scoped at the object level
 
 10.  What is special about the initialize method?
 
-**Solution**
+  **Solution**
 
-The initialize method is treated as a constructor because it is triggered when we create a new objects.
+  The initialize method is treated as a constructor because it is triggered when we create a new objects.
 
 11. What is happening here? Be precise.
 
-```Ruby
-class GoodDog
+  ```Ruby
+  class GoodDog
     def initialize(name)
         @name = name
     end
-end
+  end
 
-spot = GoodDog.new("Spot")
-```
+  spot = GoodDog.new("Spot")
+  ```
 
-**Solution**
+  **Solution**
