@@ -489,3 +489,74 @@ fido.a_protected_method
   # => NoMethodError: protected method `a_protected_method' called for
     #<Animal:0x007fb174157110>
 ```
+
+<h1> Accidental Method Overriding </h1>
+
+Every class you create inherently subclasses from class `object`.
+
+The `Object` class is built into Ruby and comes with many critical methods.
+
+```Ruby
+class Person
+  attr_accessor :name
+
+  def initialize(name)
+    self.name = name
+  end
+
+  def get_id
+    "#{special_id}"
+  end
+
+  private
+
+  def special_id
+    "1345"
+  end
+
+end
+
+p Person.superclass => Object
+
+```
+
+This means that methods defined in Object class are available in all classes
+
+**Remember**, a subclass can override a superclass's method.
+
+**CAUTION** 
+Be very careful about overriding methods that belong in the object class, because it can have varying effects on your code.
+
+```Ruby
+class Child
+  def say_hi
+    p "Hi from Child."
+  end
+
+  def send
+    p "send from Child..."
+  end
+end
+
+lad = Child.new
+lad.send :say_hi
+```
+
+In the example above, the method `send` is originally defined in the `Object` class and 
+when we defined `send` inside `Child`, we get an error when we call `lad.send :say_hi`
+
+We were expecting `"Hi from Child"` to be printed out, but instead we got an error.
+
+Why!?!?!
+
+Because we are overriding the `send` method originally defined in the `object` class, we get an error that there is 1 argument
+when there should be no arguments.
+
+```Ruby
+ArgumentError: wrong number of arguments (1 for 0)
+from (pry):12:in `send'
+```
+
+
+
+
