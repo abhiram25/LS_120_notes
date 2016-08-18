@@ -123,5 +123,9 @@
   end
 
   sparky = GoodDog.new("Sparky")
-  sparky.speak
+  puts sparky.speak
   ```
+  **Solution**
+
+  The output of the last line is `"Sparky"`
+
