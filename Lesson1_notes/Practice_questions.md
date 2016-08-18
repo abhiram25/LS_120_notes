@@ -109,4 +109,19 @@
    
    The string `Spot` is being passed from the `new` method and is assigned to the param local variable `name`.  Afterwards we set the instance variable `@name` to `name`, which results in assigning the string `"Sparky"` to the `@name` instance variable.
    
- 12. 
+12. What is the output of the last line and why?
+  
+ ```Ruby
+   class GoodDog
+    def initialize(name)
+      @name = name
+    end
+
+    def speak
+      "Arf!"
+    end
+  end
+
+  sparky = GoodDog.new("Sparky")
+  sparky.speak
+  ```
