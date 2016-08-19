@@ -28,7 +28,7 @@ class Athlete
 	def train
 		"#{@name} is training"
 	end
-end
+	
 	def play
 		"Playing #{sport}"
 	end
