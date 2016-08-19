@@ -29,9 +29,6 @@ class Athlete
 		"#{@name} is training"
 	end
 end
-```
-
-```Ruby
 	def play
 		"Playing #{sport}"
 	end
