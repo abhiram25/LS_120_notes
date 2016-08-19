@@ -21,6 +21,7 @@ class Athlete
 		@name = name
 		@sport = sport
 	end
+	
 	def play
 		"Playing #{@sport}"
 	end
