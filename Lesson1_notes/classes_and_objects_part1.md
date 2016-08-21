@@ -4,47 +4,57 @@
 
 **behaviors** - What objects are capable of doing
 
-For example, we have two athletes Lebron James and Roger Federer
-
-They are both Athletes, but may contain different information such as the sport they play.
-
 We would use **instance variables** to track this information
 
 **Instance Variables** are scoped at the object level
 
-Even though Roger Federer and Lebron James are two different Athletes, they have
-common behavior such as play and train
+Ex)
 
-```Ruby 
-class Athlete
-	def initialize(name, sport)
-		@name = name
-		@sport = sport
-	end
-	
-	def play
-		"Playing #{@sport}"
-	end
+We have a class called `Student`, we all have the same behavior such as learning and programming.
 
-	def train
-		"#{@name} is training"
-	end
-	
-	def play
-		"Playing #{sport}"
-	end
+However, each student will be in a different course, the course they are currently doing in Launch School
+will be the state.
 
-	def train
-		"#{name} is training"
-	end
+Here is what our class will look like.
+
+```
+class Student
+  def initialize(name, course)
+    @name = name
+    @course = course
+  end
+
+  def learning
+  end
+  
+  def programming
+  end
 end
 ```
+
+In the above example, `@name` and `@course` are our **states** 
+and the methods `learning` and `programming` are
+our behaviors.
+
+Let's create an object for `Student`
+
+```
+abhi = Student.new("Abhi", 120)
+```
+
+The string `"Abhi"` and the integer `120` is being passed through the `new` method through the `initialize` method
+and is assigned to the local variable `name` and `course`, which results in the string `"Abhi"` being passed into 
+the `@name` instance variable and also `120` is being passed into the `@course` instance variable.
+
+The underlying principle is that every object's state is unique and instance variables are how we keep track.
+
+
 
 <h1>Why not just use the @instance variable?</h1>
 
 Suppose we have an instance variable for Social security number, we only want to show the last 4 numbers
 
-```Ruby
+```
 class Customer
 	def initialize(ssn)
 		@ssn = ssn
