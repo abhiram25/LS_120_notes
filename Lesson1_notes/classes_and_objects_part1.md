@@ -42,7 +42,7 @@ Let's create an object for `Student`
 abhi = Student.new("Abhi", 120)
 ```
 
-The string `"Abhi"` and the integer `120` is being passed through the `new` method through the `initialize` method
+The string `"Abhi"` and the integer `120` is being passed from the `new` method through the `initialize` method
 and is assigned to the local variable `name` and `course`, which results in the string `"Abhi"` being passed into 
 the `@name` instance variable and also `120` is being passed into the `@course` instance variable.
 
