@@ -28,7 +28,88 @@ In the above example, `sparky` is an object or instance of class `GoodDog`.  The
 
 The important fact here is that an object was returned by calling the class method `new`.
 
-Example of use of **modules**
+Let's say we didn't use a `module` for multiple classes to use, what would our code look like?
+
+```Ruby
+class Instructor
+  include SupportAndMaintain	
+
+  def interview
+  end
+
+  def student_intro
+  end
+
+  def conduct_webinar
+  end
+
+  def approve_assessment
+  end
+  
+  def maintain
+  end
+
+  def answer
+  end
+
+  def write(content)
+  end
+
+  def create_xercise
+  end
+end
+
+class TA
+  include SupportAndMaintain
+	
+  def grade_assessment
+  end
+
+  def code_review
+  end
+  
+  def maintain
+  end
+
+  def answer
+  end
+
+  def write(content)
+  end
+
+  def create_xercise
+  end
+end
+
+Chris = Instructor.new
+
+Kevin = Instructor.new
+```
+
+As you can see above, we have defined in both the class `TA` and the class `Instructor`.  
+The classes `TA` and `Instructor` both share the methods below, so this would be a 
+great opportunity to use a `module` to groups these behaviors below and be mixed in 
+using the `include` key word.
+
+```
+  def maintain
+  end
+
+  def answer
+  end
+
+  def write(content)
+  end
+
+  def create_xercise
+  end
+```
+
+Let's try this again.
+
+We will create a `module` called `SupportAndMaintain` and put these methods
+inside of this module. We will use the `include` key word to mix in the `module`
+into the class.
 
 ```Ruby
 
@@ -79,7 +160,7 @@ Kevin = Instructor.new
 
 The module `SupportAndMaintain` were created because TA's and Instructors 
 share responsibilities regarding support
-and maintaining the website
+and maintaining the website.
 
 Methods were also defined in the Intstructor class and TA class.  For example, the Instructor interviews students
 while the TA has individual responsibilites such as reviewing code and also grading the first part of the assessment.
