@@ -8,6 +8,9 @@
 
 Smaller **subclasses** will have more fine-grained detailed behaviors
 
+For example, we can have a `Manager` and that could be a **superclass**, then we have small subclasses
+called `employee` which inherit behaviors from the `Manager`.
+
 Another way to apply a polymorphic structure is to use a `module`.
 
 A `module` is a set of behaviors that multiple classes can use in a program using a `mixin`
@@ -25,7 +28,7 @@ In the above example, `sparky` is an object or instance of class `GoodDog`.  The
 
 The important fact here is that an object was returned by calling the class method `new`.
 
-Example provided below
+Example of use of **modules**
 
 ```Ruby
 
