@@ -158,6 +158,11 @@ Chris = Instructor.new
 Kevin = Instructor.new
 ```
 
+Now the code above looks much cleaner. 
+
+If multiple classes share multiple methods, then we can avoid repetive code 
+using a `module`
+
 The module `SupportAndMaintain` were created because TA's and Instructors 
 share responsibilities regarding support
 and maintaining the website.
