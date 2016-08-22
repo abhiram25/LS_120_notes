@@ -14,29 +14,31 @@ Just like instance variables capture information related to specific instances o
 that are appropriately named **class variables**.  Class variables are created using two `@` symbols, `@@`.
 
 ```Ruby
-class GoodDog
-  @@number_of_dogs = 0
+class Student
+  @@number_of_students = 0
 
-  def initialize
-    @@number_of_dogs += 1
+  def initialize(name, course)
+    @@number_of_students += 1
+    @name = name
+    @course = course
   end
 
-  def self.total_number_of_dogs
-    @@number_of_dogs
+  def self.number_of_students
+    @@number_of_students
   end
 end
 
-puts GoodDog.total_number_of_dogs   # => 0
+puts Student.number_of_students   # => 0
 
-dog1 = GoodDog.new
-dog2 = GoodDog.new
+dog1 = Student.new("Jason", 100)
+dog2 = Student.new("Abhi", 100)
 
-puts GoodDog.total_number_of_dogs   # => 2
+puts Student.number_of_students    # => 2
 ```
 
-Our class variable `@@number_of_dogs` is initialized to 0
+Our class variable `@@number_of_students` is initialized to 0
 
-Every time we had a new instance of the class GoodDog, the initialize method is being ran which increments the class variable `@@number_of_dogs` by 1.
+Every time we had a new instance of the class Student, the initialize method is being ran which increments the class variable `@@number_of_students` by 1.
 
 This is an example of using a class level variable and a class method to keep track of class level detail that pertains to the class and not to individual objects.
 
@@ -58,12 +60,12 @@ end
 puts ClassRoom.total_number_of_students
 # => 0
 
-Abhi = ClassRoom.new
+abhi = ClassRoom.new
 
 puts ClassRoom.total_number_of_students
 # => 1
 
-Jason = ClassRoom.new
+aason = ClassRoom.new
 
 puts ClassRoom.total_number_of_students
 # => 2
