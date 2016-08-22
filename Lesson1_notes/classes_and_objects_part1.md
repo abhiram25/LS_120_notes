@@ -231,7 +231,7 @@ class Student
 	end
 	
 	def learn
-		"#{name} is learning in course #{course}"
+		"#{@name} is learning in course #{@course}"
 	end
 	
 	def program
@@ -263,7 +263,7 @@ class Student
 	end
 
 	def learn
-		"#{name} is learning in course #{course}"
+		"#{@name} is learning in course #{@course}"
 	end
 	
 	def program
@@ -300,7 +300,7 @@ class Student
 	end
 
 	def learn
-		"#{name} is learning in course #{course}"
+		"#{@name} is learning in course #{@course}"
 	end
 	
 	def program
@@ -349,7 +349,7 @@ class Student
 	end
 
 	def learn
-		"#{name} is learning in course #{course}"
+		"#{@name} is learning in course #{@course}"
 	end
 	
 	def program
@@ -372,6 +372,128 @@ We can only update course at this point like so:
 
 ```
 abhi.course = 170 => The instance variable @course is now assigned to 170 inside the object abhi
+```
+
+We can also use these methods inside the class as well.
+
+```
+def learn
+	"#{@name} is learning in course #{@course}"
+end
+```
+
+Instead of reference the variable directly, we want to use the name getter method and the 
+course getter method which is given to us by the `attr_reader` and `attr_accessor` methods.
+
+```
+def learn
+	"#{name} is learning in course #{course}"
+end
+```
+
+This is cool and all, but why can't we just use `@name` and `@course`?
+
+So each student and Launch School has a debit or credit card and we don't want
+to expose the raw data or the entire credit card number.  
+
+Let's say my card number is 5434-7896-4332-1998
+
+We only want the last 4 digits visible, so it should
+look something like this xxxx-xxxx-xxxx-1998.
+
+```
+def card_number
+	xxxx-xxxx-xxxx- + @card_number.split("-").last
+end
+```
+
+If we were to reference `@card_number`, then we will have exposed the entire credit card number.
+
+If we reference card_number, we get the following output below:
+
+```
+abhi.card_number => xxxx-xxxx-xxxx-1998
+```
+
+If we reference `@card_number`, we get the following output:
+
+```
+	5434-7896-4332-1998
+```
+
+If we found a bug in this code or someone wants to change the format, we can refernce the `card_number` getter method
+and make the changes there.
+
+We can now use the `card_number` method without the `@` throughout our class to retrieve the card number.
+
+What if we wanted to change our information.
+
+We could implement something like this.
+
+```
+class Student
+	attr_accessor :name, :course 
+	
+	def initialize(name, course)
+		@name = name
+		@course = course
+	end
+
+	def learn
+		"#{@name} is learning in course #{@course}"
+	end
+	
+	def program
+		"programming"
+	end
+	
+	def change_info(n, c)
+		@name = n
+		@course = c
+	end
+	
+	def info
+		"Name: #{name} Course: #{course}"
+	end
+end
+	
+abhi = Student.new("Abhi", 120)
+```
+
+We can use the `change_info` method like this
+```
+abhi = Student.new("Abhi", 120)
+puts abhi.info => Name: Abhi Course: 120
+
+abhi.change_info("Abhiram", 170) 
+abhi.info => Name: Abhiram Course: 170
+```
+
+Let's change the `change_info` method to this
+
+```
+def change_info(n, c)
+  name = n
+  course = c
+end
+```
+
+abhi.change_info("Abhiram", 170) 
+abhi.info => Name: Abhi Course: 120
+
+So our setter methods didn't work, why?
+
+The reason our setter methods didn't work is because Ruby thought we were instantiating
+local variables.  
+
+To disambiguate from creating a local variable, we need to use the `self.name=` to let Ruby know
+we are calling a method.
+
+```
+def change_info(n, c)
+  self.name = n
+  self.course = c
+end
 ```
 
 
