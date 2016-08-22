@@ -146,8 +146,8 @@ Remember **no peeking** at the solution.
   ```
   **Solution**
 
-  The output of the last line is _"arf"_ because when created the instance method `speak`, the method
-  returned _"arf"_.
+  The output of the last line is "arf" because when created the instance method `speak`, the method
+  returned "arf".
   
   
 
