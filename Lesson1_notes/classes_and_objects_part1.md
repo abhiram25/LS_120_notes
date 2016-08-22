@@ -94,7 +94,7 @@ So we can do something like this.
 
 ```
   def learn
- 		"#{@name} is learning in course #{course}"
+ 	"#{@name} is learning in course #{course}"
   end
 ```
 
@@ -179,11 +179,12 @@ class Student
   	@course
   end
   
-  def update_course=(course)
+  def update_course=(number)
   	@course = course
   end
 end
 
+abhi = Student.new("Abhi", 120)
 puts abhi.get_course => 120
 abhi.update_course = 170
 puts abhi.get_course => 170
@@ -207,6 +208,175 @@ When you see this code, realize there is a `update_course=` working behind the s
 a **setter** method and allows us to use the method naturally like this.
 
 `abhi.update_course = 170`
+
+Rubyists prefer to name those **setter** and **getter** methods using the same name
+as the instance variable they are exposing and setting.  
+
+Instead of using the `get_course` and `update_course` methods to get the course and update the course,
+we want to use the name our method `course` to get the the course and update the course.
+
+```
+class Student
+	def initialize(name, course)
+		@name = name
+		@course = course
+	end
+	
+	def course
+		@course
+	end
+	
+	def course=(number)
+		@course = number
+	end
+	
+	def learn
+		"#{name} is learning in course #{course}"
+	end
+	
+	def program
+		"programming"
+	end
+end
+	
+	abhi = Student.new("Abhi", 120)
+	puts abhi.learn => "Abhi is learning in course 120"
+	puts abhi.course => "120"
+	abhi.course = 170
+	puts abhi.course => "170"
+```
+
+Excellent, we created our setters and getters for `course`, however we took up a lot of space within our class.
+If we had other states we want to track, the class would be even longer.
+
+What if I told you Ruby has a built in way to automatically create these setters and getters for us?
+
+Enter `attr_accessor` method.
+
+```
+class Student
+	attr_accessor :course
+	
+	def initialize(name, course)
+		@name = name
+		@course = course
+	end
+
+	def learn
+		"#{name} is learning in course #{course}"
+	end
+	
+	def program
+		"programming"
+	end
+end
+	
+	abhi = Student.new("Abhi", 120)
+	puts abhi.learn => "Abhi is learning in course 120"
+	puts abhi.course => "120"
+	abhi.course = 170
+	puts abhi.course => "170"
+```
+
+The output is the same, as you can see above, there is no need for the `course` or `course=(number)` getter and setter methods,
+because the `attr_accessor` method creates the setters and getters for us.
+
+What if we want the student's name without changing it.
+
+Enter `attr_reader` method
+
+It works the same way as the `attr_accessor` method, but only allows you to retrieve the instance variable.
+
+Let's create our `attr_reader` that takes the `symbol` `:name` as an argument.
+
+```
+class Student
+	attr_accessor :course
+	attr_reader :name
+	
+	def initialize(name, course)
+		@name = name
+		@course = course
+	end
+
+	def learn
+		"#{name} is learning in course #{course}"
+	end
+	
+	def program
+		"programming"
+	end
+end
+	
+	abhi = Student.new("Abhi", 120)
+	puts abhi.learn => "Abhi is learning in course 120"
+	puts abhi.course => "120"
+	abhi.course = 170
+	puts abhi.course => "170"
+```
+
+In the example above, we can retrieve name, but we cannot change the `name` instance variable on an object.
+
+Let's see what happens when we try
+
+```
+undefined method `name=' for #<Student:0x007fb91c15f040 @name="Abhi", @course=120> (NoMethodError)
+```
+
+So the error above tells us there is no `name=` for the `abhi` object.
+
+If we just use the `name` method for for the `abhi` object.
+This is our output.
+
+```
+abhi.name => "Abhi"
+```
+
+What if we only want to update an instance variable but not retrieve it?
+
+Enter `attr_writer` method
+
+Let's say we want to update the course, but not retrieve it.
+
+```
+class Student
+	attr_writer :course
+	attr_reader :name
+	
+	def initialize(name, course)
+		@name = name
+		@course = course
+	end
+
+	def learn
+		"#{name} is learning in course #{course}"
+	end
+	
+	def program
+		"programming"
+	end
+end
+	
+	abhi = Student.new("Abhi", 120)
+```
+
+If we try to retrieve it, here is our output.
+
+```
+undefined method `course' for #<Student:0x007fc21c1232f8 @name="Abhi", @course=120>
+```
+
+As you can see above, there is no `course` method for the object `abhi` or any instances of the class `Student`.
+
+We can only update course at this point like so:
+
+```
+abhi.course = 170 => The instance variable @course is now assigned to 170 inside the object abhi
+```
+
+
+
+
 
 
 
