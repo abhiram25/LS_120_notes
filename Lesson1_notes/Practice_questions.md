@@ -53,7 +53,7 @@ Remember **no peeking** at the solution.
   class GoodDog
   end
 
-  sparky = GoodDog.newTerm
+  sparky = GoodDog.new
   ```
 
   **Solution**
