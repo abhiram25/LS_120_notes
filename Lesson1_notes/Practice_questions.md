@@ -146,8 +146,8 @@ Remember **no peeking** at the solution.
   ```
   **Solution**
 
-  The output of the last line is `"Sparky"` because we created the instance method `speak` to call on the 
-  instance or object of the class `GoodDog`.
+  The output of the last line is _"arf"_ because when created the instance method `speak`, the method
+  returned _"arf"_.
   
   
 
