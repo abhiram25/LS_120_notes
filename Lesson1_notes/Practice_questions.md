@@ -149,5 +149,33 @@ Remember **no peeking** at the solution.
   The output of the last line is "arf" because when created the instance method `speak`, the method
   returned "arf".
   
+  13. What is the output of the last line and why?  What is the underlying principle?
+  
+   ```
+   class GoodDog
+     def initialize(name)
+     @name = name
+   end
+
+   def get_name
+     @name
+   end
+
+   def speak
+    "#{@name} says arf!"
+   end
+  end
+
+  sparky = GoodDog.new("Sparky")
+  puts sparky.speak
+  puts sparky.get_name 
+  ```
+  
+  **Solution**
+  
+  The output of of the last line is `"Sparky"` because when we created the `get_name` method, the return value of this method is 
+  the instance variable `@name`.  The underlying principle is that to retrieve data from an object outside of the class, we need
+  to create a `getter`.
+  
   
 
