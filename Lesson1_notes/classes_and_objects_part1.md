@@ -49,7 +49,7 @@ Let's create another `Student` object.
 We have a student named, Jambalaya.  Jambalaya is in course 220.
 
 ``` 
-	jambalaya = Student.new("Jambalaya", 220)
+jambalaya = Student.new("Jambalaya", 220)
 ```
 
 Just like the object `abhi`, the string `"Jambalaya"` and the integer `220`
@@ -105,9 +105,61 @@ Now we are exposing the states of the objects using instance methods.
 	puts jambalaya.learn => "Jambalaya is learning in course 220"
 ```
 
-
-
 <h1>Accessor Methods</h1>
+
+What if we wanted to print out `abhi`'s course number.
+
+We could try this code below.
+
+```
+puts abhi.course
+```
+
+Take a moment and think about what the output would be.
+
+The output will be 
+
+```
+NoMethodError: undefined method `course' for #<Student:0x007f91821239d0 @course=120>
+```
+
+`NoMethodError` means the method doesn't exist or is unavailable to the object.
+
+If we want to access the object's course, which is stored in the `@course` instance variable,
+we have to create a method that will return the course.  We can call it get_course and its only job
+will be to return the value in the `@course` instance variable.
+
+```
+abhi.get_course
+```
+
+```
+class Student
+  def initialize(name, course)
+    @name = name
+    @course = course
+  end
+
+  def learn
+ 		"learning"
+  end
+  
+  def program
+  	"programming"
+  end
+  
+  def get_course
+  	@course
+  end
+end
+
+puts abhi.get_course => 120
+```
+
+Excellent! This worked.  Now we created out **getter** method.  
+
+So Let's say `Abhi` passes his assessment, how can we update the course
+he is currently in?
 
 Suppose we have an instance variable for Social security number, we only want to show the last 4 numbers
 
