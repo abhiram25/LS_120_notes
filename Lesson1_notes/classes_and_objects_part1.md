@@ -23,18 +23,10 @@ class Student
     @name = name
     @course = course
   end
-
-  def learning
-  end
-  
-  def programming
-  end
 end
 ```
 
-In the above example, `@name` and `@course` are our **states** 
-and the methods `learning` and `programming` are
-our behaviors.
+In the above example, `@name` and `@course` are our **states**.
 
 Let's create an object for `Student`
 
@@ -48,9 +40,74 @@ the `@name` instance variable and also `120` is being passed into the `@course` 
 
 The underlying principle is that every object's state is unique and instance variables are how we keep track.
 
+**Instance** variables are responsible for keeping track of information about the _state_ of an object.
+
+The state of the object is being tracked in the instance variable.
+
+Let's create another `Student` object.
+
+We have a student named, Jambalaya.  Jambalaya is in course 220.
+
+``` 
+	jambalaya = Student.new("Jambalaya", 220)
+```
+
+Just like the object `abhi`, the string `"Jambalaya"` and the integer `220`
+is being passed in from the `new` method through to the `initialize` method 
+and the string `"Jambalaya` is assigned to the `@name` instance variable and 
+`220` is being assigned to the `@course` instance variable. 
+
+The objects `abhi` and `jambalaya` are objects of the class `Student`, each object
+has different states.  Both objects have different names and different courses.
+
+<h1>Instance Methods</h1>
+
+We will give our students some behaviors called `learn` and `program`.
+
+```
+class Student
+  def initialize(name, course)
+    @name = name
+    @course = course
+  end
+
+  def learn
+ 		"learning"
+  end
+  
+  def program
+  	"programming"
+  end
+end
+
+puts abhi.learn => "learning"
+puts jambalaya.program => "programming"
+```
+
+Both Jambalaya and Abhi are able to `learn` and `program`.
+
+What if we wanted to put say something like "Abhi is learning in course 120"?
+
+In our instance methods, we have access to all instance variables.
+
+So we can do something like this.
+
+```
+  def learn
+ 		"#{@name} is learning in course #{course}"
+  end
+```
+
+Now we are exposing the states of the objects using instance methods.
+
+```
+	puts abhi.learn => "Abhi is learning in course 120"
+	puts jambalaya.learn => "Jambalaya is learning in course 220"
+```
 
 
-<h1>Why not just use the @instance variable?</h1>
+
+<h1>Accessor Methods</h1>
 
 Suppose we have an instance variable for Social security number, we only want to show the last 4 numbers
 
