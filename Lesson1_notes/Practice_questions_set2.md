@@ -47,5 +47,16 @@ Take a separate sheet of paper or type your answers in a word document.
 
     puts ClassRoom.total_number_of_students
     ```
-   
+    
+    **Solution** 
+    
+    The output of the last line is 2.  We initiliazed the class variable `@@number_of_students` to 0 and when we
+    created our object `abhi`, we incremented `@@number_of_students` by 1 because each time we create a new instance
+    of the class `ClassRoom`, we increment `@@number_of_students` because `@@number_of_students += 1` is in our `initialize` method.
+    
+    When the new object `jason` is created, the **class** variable `@@number_of_students` is now 2 because we created another instance.
+    
+    On the last line we call the method `total_number_of_students` on the class `ClassRoom`, which returns the variable `@@number_of_students` and `@@number_of_students` is assigned to 2, so as a result we get 2 printed.
+    
+  
    
