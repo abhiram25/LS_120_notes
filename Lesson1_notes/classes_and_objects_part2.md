@@ -46,7 +46,8 @@ Let's say we have a classroom full of students, initially we don't have any stud
 
 ```Ruby
 class ClassRoom
-	@@number_of_students = 0
+
+@@number_of_students = 0
 
 	def initialize
 		@@number_of_students += 1
