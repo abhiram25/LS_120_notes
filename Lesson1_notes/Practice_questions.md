@@ -236,7 +236,7 @@ Remember **no peeking** at the solution.
   The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
   a `setter` and `getter` method was automatically created for `@name`.  
 
-16. In your own words, explain what the difference between **attr_reader**, **attr_writer**, and **attr_accessor**
+16. In your own words, explain what the difference between **attr_reader**, **attr_writer**, and **attr_accessor**.
 
  **Solution**
 
