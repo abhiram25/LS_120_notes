@@ -135,7 +135,6 @@ Take a separate sheet of paper or type your answers in a word document.
     A **public** method is a method readily available to anyone who either knows the class name
     or object's name.  These methods are available for the rest of the program to use and comprise class's
     interface.
-   
 7.
     
     
