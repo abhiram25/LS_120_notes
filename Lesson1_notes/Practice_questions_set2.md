@@ -1,27 +1,51 @@
 Read the questions, below and write your answers down.
 
-The idea is to learn good written communication and also be more precise.
+The idea is to improve good written communication and also be more precise.
 
 Writing these answers down will force you to think about what you are saying and the understanding should stick into memory.
 
 Take a separate sheet of paper or type your answers in a word document.
 
-1. What is a **class method**? How do we define a **class method**?
+ 1. What is a **class method**? How do we define a **class method**?
 
-  **Solution**
+    **Solution**
 
-   Methods we can call directly on the class itself, without having to instantiate objects.
+    Methods we can call directly on the class itself, without having to instantiate objects.
    
-   We define a class method by prepending `self` before the method.
+    We define a class method by prepending `self` before the method.
    
-   **class methods** are where we put functionality that doesn't pertain to individual objects.
+    **class methods** are where we put functionality that doesn't pertain to individual objects.
    
-2. How can we differentiate between **instance** variables and **class** variables?
+ 2. How can we differentiate between **instance** variables and **class** variables?
    
-   **Instance** variables have one `@` in front of it `@instance`
+    **Instance** variables have one `@` in front of it `@instance`
 
-   **Class** variables have two `@`'s in front of it `@@class`.
+    **Class** variables have two `@`'s in front of it `@@class`.
+ 
+ 3. What is the output of the last line and why?
+    
+    ```
+    class ClassRoom
+      @@number_of_students = 0
 
-3.
+     def initialize
+        @@number_of_students += 1
+     end
+
+     def self.total_number_of_students
+        @@number_of_students
+     end
+    end
+
+    puts ClassRoom.total_number_of_students
+
+    abhi = ClassRoom.new
+
+    puts ClassRoom.total_number_of_students
+
+    jason = ClassRoom.new
+
+    puts ClassRoom.total_number_of_students
+    ```
    
    
