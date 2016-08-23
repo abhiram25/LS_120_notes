@@ -86,7 +86,7 @@ Take a separate sheet of paper or type your answers in a word document.
     
       The `to_s` method defined in the class `GoodDog` overrides Ruby's built-in `to_s` method.
       
-5. What does `self` reference here?
+ 5. What does `self` reference here?
       
      ```
      # good_dog.rb
