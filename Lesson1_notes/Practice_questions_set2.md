@@ -113,7 +113,5 @@ Take a separate sheet of paper or type your answers in a word document.
   **Solution**
   
   `self` is referencing `GoodDog`.  The underlying principle is that when we use self outside of a method, we reference the class.
-    
- 7. 
-    
+
     
