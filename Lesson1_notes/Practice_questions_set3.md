@@ -6,6 +6,6 @@ Writing these answers down will force you to think about what you are saying and
 
 Take a separate sheet of paper or type your answers in a word document.
 
- 1. What is **inheritance**?
+1. What is **inheritance**?
    
- 2.
+2.
