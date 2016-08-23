@@ -176,6 +176,66 @@ Remember **no peeking** at the solution.
   The output of of the last line is `"Sparky"` because when we created the `get_name` method, the return value of this method is 
   the instance variable `@name`.  The underlying principle is that to retrieve data from an object outside of the class, we need
   to create a `getter`.
-  
-  
+ 
+14. What is output of the last line below and why?   
+    ```
+    # good_dog.rb
 
+   class GoodDog
+    def initialize(name)
+    @name = name
+   end
+
+   def get_name
+     @name
+   end
+
+   def set_name=(name)
+     @name = name
+   end
+
+   def speak
+    "#{@name} says arf!"
+   end
+  end
+
+  sparky = GoodDog.new("Sparky")
+  puts sparky.speak
+  puts sparky.get_name
+  sparky.set_name = "Spartacus"
+  puts sparky.get_name
+  ```
+  
+  **Solution**
+  The output of the last line of this code is "Spartacus" because we called the `set_name=` method on `sparky`
+  and as a result the instance variable `@name` is assigned to "Spartacus" 
+  
+  `sparky.set_name = "Spartacus"` is the same as `sparky.set_name=("Spartacus")`
+  
+15. How are we able to print out `sparky`'s name and also set `sparky`'s name to "Spartacus?
+  ```
+  class GoodDog
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def speak
+    "#{@name} says arf!"
+  end
+ end
+
+ sparky = GoodDog.new("Sparky")
+ puts sparky.speak
+ puts sparky.name            # => "Sparky"
+ sparky.name = "Spartacus"
+ puts sparky.name            # => "Spartacus"
+ ```
+
+**Solution**
+
+The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
+a `setter` and `getter` method was automatically created for `@name`.  
+
+16. What if 
