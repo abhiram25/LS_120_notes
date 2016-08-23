@@ -136,6 +136,14 @@ Take a separate sheet of paper or type your answers in a word document.
   or object's name.  These methods are available for the rest of the program to use and comprise class's
   interface.
 
-7.
+7. What is a **private** method?
+
+  **Solution**
+  
+  A **private** method is a method that doesn't need to be available to the rest of the program.
+  
+  It cannot be called outside the class and can only be called inside the class without `self`
+  
+8. What are the two rules of `protected` methods?
     
     
