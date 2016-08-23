@@ -235,7 +235,9 @@ Remember **no peeking** at the solution.
 
 **Solution**
 
-The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
-a `setter` and `getter` method was automatically created for `@name`.  
+ The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
+ a `setter` and `getter` method was automatically created for `@name`.  
 
-16. What if 
+16.
+
+
