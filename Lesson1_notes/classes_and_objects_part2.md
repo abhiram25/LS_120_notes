@@ -30,8 +30,8 @@ end
 
 puts Student.number_of_students   # => 0
 
-dog1 = Student.new("Jason", 100)
-dog2 = Student.new("Abhi", 100)
+student1 = Student.new("Jason", 100)
+student2 = Student.new("Abhi", 100)
 
 puts Student.number_of_students    # => 2
 ```
