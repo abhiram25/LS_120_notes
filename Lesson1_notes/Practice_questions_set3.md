@@ -118,15 +118,15 @@ Take a separate sheet of paper or type your answers in a word document.
   
 5. What does **namespacing** mean? What are the advantages?
  
-    **Solution**
+  **Solution**
 
-    Using modules to group similar classes in a module
+  Using modules to group similar classes in a module
     
-    The advantages od namespacing is that:
+  The advantages od namespacing is that:
     
-    - We can group related classes
+  - We can group related classes
     
-    - Reduces likelihood of classes colliding with other similarly named classes
+  - Reduces likelihood of classes colliding with other similarly named classes
 
 6. What is a **public** method?
 
