@@ -149,7 +149,7 @@ Remember **no peeking** at the solution.
   The output of the last line is "arf" because when created the instance method `speak`, the method
   returned "arf".
   
-  13. What is the output of the last line and why?  What is the underlying principle?
+13. What is the output of the last line and why?  What is the underlying principle?
   
    ```
    class GoodDog
