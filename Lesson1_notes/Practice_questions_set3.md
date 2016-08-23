@@ -82,3 +82,38 @@ Take a separate sheet of paper or type your answers in a word document.
   puts paws.speak             # => Hello!
   ```
   
+  **Solution**
+  
+  The speak method is defined in the `GoodDog` class and it overrides the `speak` method
+  defined in the `Animal` class because when the `speak` method is called on `sparky`, Ruby first
+  looks at the `GoodDog` method because that `sparky` is the instance of the class `GoodDog`.
+  
+  It found the `speak` method in the `GoodDog` class and used it.
+  
+4. Sandy wants to get the name for the object `bruno`, the output is "brown".  What happened?
+
+    ```
+    class Animal
+      attr_accessor :name
+    
+      def initialize(name)
+        @name = name
+      end
+    end
+    
+    class GoodDog < Animal
+      def initialize(color)
+        super
+        @color = color
+      end
+    end
+    
+    bruno = GoodDog.new("brown")
+    bruno.name
+    ```
+  **Solution**
+  
+  When we called the `super` method we didn't pass in any arguments, so by default the argument `color` is passed into the `initialize`
+  method in the superclass `Animal`.  As a result, we get "brown".
+  
+ 5. 
