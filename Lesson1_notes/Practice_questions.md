@@ -231,19 +231,19 @@ Remember **no peeking** at the solution.
  puts sparky.name            # => "Spartacus"
  ```
 
-**Solution**
+  **Solution**
 
- The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
- a `setter` and `getter` method was automatically created for `@name`.  
+  The `attr_accessor` method is written above and we passed in the symbol `:name` as an argument and as a result
+  a `setter` and `getter` method was automatically created for `@name`.  
 
 16. In your own words, explain what the difference between **attr_reader**, **attr_writer**, and **attr_accessor**
 
-**Solution**
+ **Solution**
 
-The `attr_accessor` method creates a `setter` and `getter` methods, which allows us retrieve and assign `@instance` variables.
+  The `attr_accessor` method creates a `setter` and `getter` methods, which allows us retrieve and assign `@instance` variables.
 
-The `attr_reader` method creates a `getter` method, which only allows us to retrieve `@instance` variables.
+  The `attr_reader` method creates a `getter` method, which only allows us to retrieve `@instance` variables.
 
-Teh `attr_writer` method creates a `setter` method, which only allows us to assign `@instance` variables.
+  The `attr_writer` method creates a `setter` method, which only allows us to assign `@instance` variables.
 
 
