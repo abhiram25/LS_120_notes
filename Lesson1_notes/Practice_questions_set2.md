@@ -100,6 +100,20 @@ Take a separate sheet of paper or type your answers in a word document.
     end
     ```
     
+    `self` references an instance of the Class `GoodDog`.
     
+ 6. What is `self` referencing here? What is the underlying principle?
+
+   ``` 
+   class GoodDog
+     # ... rest of code omitted for brevity
+     puts self
+   end
+  ```
+  **Solution**
+  
+  `self` is referencing `GoodDog`.  The underlying principle is that when we use self outside of a method, we reference the class.
+    
+ 7. 
     
     
