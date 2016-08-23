@@ -116,4 +116,17 @@ Take a separate sheet of paper or type your answers in a word document.
   When we called the `super` method we didn't pass in any arguments, so by default the argument `color` is passed into the `initialize`
   method in the superclass `Animal`.  As a result, we get "brown".
   
- 5. 
+5. What does **namespacing** mean? What are the advantages?
+ 
+    **Solution**
+
+    Using modules to group similar classes in a module
+    
+    The advantages od namespacing is that:
+    
+    - We can group related classes
+    
+    - Reduces likelihood of classes colliding with other similarly named classes
+6.
+    
+    
