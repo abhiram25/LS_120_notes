@@ -58,5 +58,48 @@ Take a separate sheet of paper or type your answers in a word document.
     
     On the last line we call the method `total_number_of_students` on the class `ClassRoom`, which returns the variable `@@number_of_students` and `@@number_of_students` is assigned to 2, so as a result we get 2 printed.
     
-  
+ 4. What is the output of the last line and why? 
+ 
+    ``` 
+      class GoodDog
+      DOG_YEARS = 7
+    
+      attr_accessor :name, :age
+    
+      def initialize(n, a)
+        @name = n
+        @age  = a * DOG_YEARS
+      end
+    
+      def to_s
+        "This dog's name is #{name} and it is #{age} in dog years."
+      end
+    end
+    
+      spot = GoodDog.new("Spot", 4)
+      puts spot
+    ```  
    
+      **Solution**
+    
+      The output of the last line is `"This dog's name is Spot and it is 28 in dog years."`
+    
+      The `to_s` method defined in the class `GoodDog` overrides Ruby's built-in `to_s` method.
+      
+5. What does `self` reference here?
+      
+     ```
+     # good_dog.rb
+
+     class GoodDog
+     # ... rest of code omitted for brevity
+
+      def what_is_self
+       self
+      end
+    end
+    ```
+    
+    
+    
+    
